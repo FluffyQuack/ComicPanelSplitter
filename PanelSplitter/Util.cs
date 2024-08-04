@@ -15,13 +15,13 @@ namespace PanelSplitter
         {
             if (String.IsNullOrEmpty(originalFileName))
             {
-                string filename = string.Format("panel{0}.jpg", counter);
-                return Path.Combine(outputDirectory, filename);
+                string filename = string.Format("panel{0}.png", counter); //Fluffy: Changed to PNG because JPEG icky ick
+				return Path.Combine(outputDirectory, filename);
             }
             else
             {
-                string filename = string.Format("{0}_Panel{1}.jpg", Path.GetFileNameWithoutExtension(originalFileName), counter);
-                return Path.Combine(outputDirectory, filename);
+                string filename = string.Format("{0}_Panel{1}.png", Path.GetFileNameWithoutExtension(originalFileName), counter); //Fluffy: Changed to PNG because JPEG icky ick
+				return Path.Combine(outputDirectory, filename);
             }         
         }
 
@@ -61,7 +61,7 @@ namespace PanelSplitter
             int height = bottom - top;
             Rectangle region = new Rectangle(left, top, width, height);
             Bitmap panel = bitmap.Clone(region, PixelFormat.DontCare);
-            panel.Save(outputfilePath, ImageFormat.Jpeg);
+            panel.Save(outputfilePath, ImageFormat.Png); //Fluffy: Changed to PNG because JPEG icky ick
         }
 
 
